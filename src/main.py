@@ -8,12 +8,14 @@ folder_path = 'src\\data\\raw'
 # LISTAR TODOS OS ARQUIVOS DE EXCEL DE FORMA DINÂMICA
 excel_files = glob.glob(os.path.join(folder_path,'*.xlsx'))
 
+df = []
+
 # CONDIÇÃO CASO NENHUM ARQUIVO SEJA ENCONTRADO
 if not excel_files:
     print("Nenhum arquivo compatível com a extensão .xlsx encontrado")
 else:
     
-    df = []
+    #df = []
     
     for excel_file in excel_files:
 
@@ -25,7 +27,7 @@ else:
            file_name = os.path.basename(excel_file)
 
            # PEGAR O ANO E O MÊS DO NOME DO ARQUIVO
-           
+           #df_temp['ano_mes'] = file_name.split('_')[-2:]
 
            # CRIAR UMA NOVA COLUNA PARA PGEAR O NOME DO ARQUIVO DE ONDE VEM A INFORMAÇÃO INICIAL
            df_temp['filename'] = file_name
